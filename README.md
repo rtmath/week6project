@@ -6,8 +6,6 @@
 
 This project is an exercise using objects with C# to make an address book.
 
-You can view the file [here](https://rtmath.github.io/week6project).
-
 ### Technologies Used
 * C#
 * Nancy/Razor
