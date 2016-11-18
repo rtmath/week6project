@@ -16,10 +16,9 @@ namespace Contacts
       Get["/create"] = _ => {
         return View["create_new.cshtml"];
       };
-      Post["/submitContact"] = _ => {
+      Post["/contact/new"] = _ => {
         Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-address"], Request.Form["contact-number"]);
-        var ContactList = Contact.GetContacts();
-        return View["index.cshtml", ContactList];
+        return View["new_contact_splash.cshtml", newContact];
       };
       Get["/contacts/{id}"] = parameters => {
         Contact contact = Contact.FindContact(parameters.id);

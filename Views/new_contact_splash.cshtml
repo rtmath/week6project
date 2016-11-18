@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>You created a new contact!</title>
+  </head>
+  <body>
+    <h1>You created a new contact: </h1>
+    <h3>Name: @Model.GetContactName()</h3>
+    <h3>Address: @Model.GetAddress()</h3>
+    <h3>Phone Number:@Model.GetPhoneNumber()</h3>
+    <form action="/" method="get"> <!-- <METHOD -->
+      <button type="submit">Return Home</button>
+    </form>
+  </body>
+</html>
