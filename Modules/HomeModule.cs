@@ -21,6 +21,10 @@ namespace Contacts
         var ContactList = Contact.GetContacts();
         return View["index.cshtml", ContactList];
       };
+      Get["/contacts/{id}"] = parameters => {
+        Contact contact = Contact.FindContact(parameters.id);
+        return View["display_contact.cshtml", contact];
+      };
       //Insert your GETs and POSTs here
     }
   }

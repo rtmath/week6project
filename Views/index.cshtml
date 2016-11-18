@@ -8,7 +8,7 @@
     <span>Here are the contacts you have created: </span>
     @foreach (var contact in Model)
     {
-      <li><a href='/'>@contact.GetContactName()</a></li>
+      <li><a href='/contacts/@contact.GetContactID()'>@contact.GetContactName()</a></li>
     }
     <form action="/create" method="get"> <!-- <METHOD -->
       <button type="submit">Create New Contact</button>
