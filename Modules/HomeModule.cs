@@ -27,8 +27,7 @@ namespace Contacts
       };
       Post["/deleteAll"] = _ => {
         Contact.ClearContacts();
-        var ContactList = Contact.GetContacts();
-        return View["index.cshtml", ContactList];
+        return View["confirmation.cshtml"];
       };
     }
   }
