@@ -3,26 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>Address Book</title>
+    <link rel="stylesheet" href="../../Content/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../../Content/css/styles.css" type="text/css">
   </head>
   <body>
-    @if (Model.Count == 0) {
-      <span>You haven't created any contacts yet!</span>
-    } else {
-    <span>Here are the contacts you have created: </span>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="well">
+        @if (Model.Count == 0) {
+        <h2>You haven't created any contacts yet!</h2>
+        } else {
+        <h2>Here are the contacts you have created: </h2>
 
-    }
-    @foreach (var contact in Model)
-    {
-      <li><a href='/contacts/@contact.GetContactID()'>@contact.GetContactName()</a></li>
-    }
-    <form action="/create" method="get"> <!-- <METHOD -->
-      <button type="submit">Create New Contact</button>
-    </form>
-    <form action="/search" method="get"> <!-- <METHOD -->
-      <button type="submit">Search for Contact</button>
-    </form>
-    <form action="/deleteAll" method="post"> <!-- <METHOD -->
-      <button type="submit" name="deleteAll">Delete All Contacts</button>
-    </form>
+        }
+        @foreach (var contact in Model)
+        {
+          <li><a href='/contacts/@contact.GetContactID()'>@contact.GetContactName()</a></li>
+        }
+        <br>
+        <div class="blocked">
+          <form class="formFloat" action="/create" method="get"> <!-- <METHOD -->
+            <button type="submit">Create New Contact</button>
+          </form>
+          <form class="formFloat" action="/search" method="get"> <!-- <METHOD -->
+            <button type="submit">Search for Contact</button>
+          </form>
+          <form class="formFloat" action="/deleteAll" method="post"> <!-- <METHOD -->
+            <button type="submit" name="deleteAll">Delete All Contacts</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
   </body>
 </html>

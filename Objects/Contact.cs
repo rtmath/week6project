@@ -8,11 +8,11 @@ namespace Contacts.Objects
   {
     private string _contactName;
     private string _address;
-    private int _phoneNumber;
+    private string _phoneNumber;
     private int _contactID;
     private static List<Contact> _allContacts = new List<Contact>{};
 
-    public Contact (string ContactName, string Address, int PhoneNumber)
+    public Contact (string ContactName, string Address, string PhoneNumber)
     {
       _contactName = ContactName;
       _address = Address;
@@ -39,11 +39,11 @@ namespace Contacts.Objects
       _address = NewAddress;
     }
 
-    public int GetPhoneNumber()
+    public string GetPhoneNumber()
     {
       return _phoneNumber;
     }
-    public void SetPhoneNumber(int NewNumber)
+    public void SetPhoneNumber(string NewNumber)
     {
       _phoneNumber = NewNumber;
     }

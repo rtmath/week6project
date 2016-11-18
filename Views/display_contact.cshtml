@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title>View Contact</title>
+    <link rel="stylesheet" href="../../Content/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../../Content/css/styles.css" type="text/css">
   </head>
   <body>
-    <h2>@Model.GetContactName()</h2>
-    <h3>Address: @Model.GetAddress()</h3>
-    <h3>Phone Number: @Model.GetPhoneNumber()</h3>
-  </body>
-  <form action="/" method="get"> <!-- <METHOD -->
-    <button type="submit">Return Home</button>
-  </form>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="well">
+        <h2>@Model.GetContactName()</h2>
+        <h3>Address: @Model.GetAddress()</h3>
+        <h3>Phone Number: @Model.GetPhoneNumber()</h3>
+      </body>
+      <div class="blocked">
+        <form action="/" method="get"> <!-- <METHOD -->
+          <button type="submit">Return Home</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </html>

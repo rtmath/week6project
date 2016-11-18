@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title>Search Results</title>
+    <link rel="stylesheet" href="../../Content/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../../Content/css/styles.css" type="text/css">
   </head>
   <body>
-    <h2>Your search returned the following results:</h2>
-    @foreach (var contact in Model)
-    {
-      <li><a href='/contacts/@contact.GetContactID()'>@contact.GetContactName()</a></li>
-    }
-    <form action="/search" method="get"> <!-- <METHOD -->
-      <button type="submit">Search Again</button>
-    </form>
-    <form action="/" method="get"> <!-- <METHOD -->
-      <button type="submit">Return Home</button>
-    </form>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="well">
+        <h2>Your search returned the following results:</h2>
+        @foreach (var contact in Model)
+        {
+          <li><a href='/contacts/@contact.GetContactID()'>@contact.GetContactName()</a></li>
+        }
+        <div class="blocked topMargin">
+          <form class="formFloat" action="/search" method="get"> <!-- <METHOD -->
+            <button type="submit">Search Again</button>
+          </form>
+          <form class="formFloat" action="/" method="get"> <!-- <METHOD -->
+            <button type="submit">Return Home</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
