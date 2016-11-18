@@ -16,19 +16,9 @@ namespace Contacts
       Get["/create"] = _ => {
         return View["create_new.cshtml"];
       };
-      Post["/test"] = _ => {
-        Contact newContact = new Contact("Sample Name", "Sample Address", 1234567890);
-        var ContactList = Contact.GetContacts();
-        ContactList.Add(newContact);
-        return View["index.cshtml", ContactList];
-      };
       Post["/submitContact"] = _ => {
-        string formName = Request.Form["contact-name"];
-        string formAddress = Request.Form["contact-address"];
-        int formNumber = Request.Form["contact-number"];
-        Contact newContact = new Contact(formName, formAddress, formNumber);
+        Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-address"], Request.Form["contact-number"]);
         var ContactList = Contact.GetContacts();
-        ContactList.Add(newContact);
         return View["index.cshtml", ContactList];
       };
       //Insert your GETs and POSTs here

@@ -9,6 +9,7 @@ namespace Contacts.Objects
     private string _contactName;
     private string _address;
     private int _phoneNumber;
+    private int _contactID;
     private static List<Contact> _allContacts = new List<Contact>{};
 
     public Contact (string ContactName, string Address, int PhoneNumber)
@@ -16,6 +17,7 @@ namespace Contacts.Objects
       _contactName = ContactName;
       _address = Address;
       _phoneNumber = PhoneNumber;
+      _allContacts.Add(this);
     }
 
     public string GetContactName()
@@ -43,6 +45,15 @@ namespace Contacts.Objects
     public void SetPhoneNumber(int NewNumber)
     {
       _phoneNumber = NewNumber;
+    }
+
+    public int GetID()
+    {
+      return _contactID;
+    }
+    public void SetID(int NewID)
+    {
+      _contactID = NewID;
     }
 
     public static List<Contact> GetContacts()

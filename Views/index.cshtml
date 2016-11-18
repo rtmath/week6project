@@ -8,16 +8,13 @@
     <span>Here are the contacts you have created: </span>
     @foreach (var contact in Model)
     {
-      <li>@contact.GetContactName()</li>
+      <li><a href='/'>@contact.GetContactName()</a></li>
     }
     <form action="/create" method="get"> <!-- <METHOD -->
       <button type="submit">Create New Contact</button>
     </form>
     <form action="/deleteAll" method="post"> <!-- <METHOD -->
       <button type="button" name="deleteAll">Delete All Contacts</button>
-    </form>
-    <form action="/test" method="post"> <!-- <METHOD -->
-      <button type="submit">Test</button>
     </form>
   </body>
 </html>
