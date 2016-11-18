@@ -9,16 +9,20 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
       <div class="well">
-        <h2>Your search returned the following results:</h2>
-        @foreach (var contact in Model)
-        {
-          <li><a href='/contacts/@contact.GetContactID()'>@contact.GetContactName()</a></li>
+        @if (@Model.Count == 0) {
+          <h2>No matches found!</h2>
+        } else {
+          <h2>Your search returned the following results:</h2>
+          @foreach (var contact in Model)
+          {
+            <li><a href='/contacts/@contact.GetContactID()'>@contact.GetContactName()</a></li>
+          }
         }
         <div class="blocked topMargin">
-          <form class="formFloat" action="/search" method="get"> <!-- <METHOD -->
+          <form class="formFloat" action="/search" method="get">
             <button type="submit">Search Again</button>
           </form>
-          <form class="formFloat" action="/" method="get"> <!-- <METHOD -->
+          <form class="formFloat" action="/" method="get">
             <button type="submit">Return Home</button>
           </form>
         </div>

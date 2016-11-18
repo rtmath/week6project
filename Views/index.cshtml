@@ -14,7 +14,6 @@
         <h2>You haven't created any contacts yet!</h2>
         } else {
         <h2>Here are the contacts you have created: </h2>
-
         }
         @foreach (var contact in Model)
         {
@@ -22,13 +21,13 @@
         }
         <br>
         <div class="blocked">
-          <form class="formFloat" action="/create" method="get"> <!-- <METHOD -->
+          <form class="formFloat" action="/create" method="get">
             <button type="submit">Create New Contact</button>
           </form>
-          <form class="formFloat" action="/search" method="get"> <!-- <METHOD -->
+          <form class="formFloat" action="/search" method="get">
             <button type="submit">Search for Contact</button>
           </form>
-          <form class="formFloat" action="/deleteAll" method="post"> <!-- <METHOD -->
+          <form class="formFloat" action="/contacts/clear" method="post">
             <button type="submit" name="deleteAll">Delete All Contacts</button>
           </form>
         </div>

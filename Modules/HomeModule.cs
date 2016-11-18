@@ -35,7 +35,7 @@ namespace Contacts
         Contact contact = Contact.FindContact(parameters.id);
         return View["display_contact.cshtml", contact];
       };
-      Post["/deleteAll"] = _ => {
+      Post["/contacts/clear"] = _ => {
         Contact.ClearContacts();
         return View["confirmation.cshtml"];
       };
