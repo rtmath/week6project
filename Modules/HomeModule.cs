@@ -22,6 +22,15 @@ namespace Contacts
         ContactList.Add(newContact);
         return View["index.cshtml", ContactList];
       };
+      Post["/submitContact"] = _ => {
+        string formName = Request.Form["contact-name"];
+        string formAddress = Request.Form["contact-address"];
+        int formNumber = Request.Form["contact-number"];
+        Contact newContact = new Contact(formName, formAddress, formNumber);
+        var ContactList = Contact.GetContacts();
+        ContactList.Add(newContact);
+        return View["index.cshtml", ContactList];
+      };
       //Insert your GETs and POSTs here
     }
   }
