@@ -25,7 +25,11 @@ namespace Contacts
         Contact contact = Contact.FindContact(parameters.id);
         return View["display_contact.cshtml", contact];
       };
-      //Insert your GETs and POSTs here
+      Post["/deleteAll"] = _ => {
+        Contact.ClearContacts();
+        var ContactList = Contact.GetContacts();
+        return View["index.cshtml", ContactList];
+      };
     }
   }
 }

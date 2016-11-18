@@ -71,5 +71,10 @@ namespace Contacts.Objects
     {
       return _contactID;
     }
+
+    public static void ClearContacts()
+    {
+      _allContacts.Clear();
+    }
   }
 }
